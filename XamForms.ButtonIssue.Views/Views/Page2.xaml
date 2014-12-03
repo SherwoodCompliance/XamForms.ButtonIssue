@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="XamForms.ButtonIssue.Views.Views.Page2"
+  x:Name="Page2"
+  Padding="0, 50, 0, 0">
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Button Text="Doesn't Animate, but clicks (btn1)"
+            Grid.Column="0"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" BackgroundColor="Blue" TextColor="White"
+            Command="{Binding ClickButtonCmd}" CommandParameter="btn1"/>
+
+    <Button Text="Animates (btn2)"
+            Grid.Column="1"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" BackgroundColor="Blue" TextColor="White"
+            Command="{Binding ClickButtonCmd}" CommandParameter="btn2"/>
+
+    <Button Text="Animates (btn3)"
+            Grid.Column="2"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" BackgroundColor="Blue" TextColor="White"
+            Command="{Binding ClickButtonCmd}" CommandParameter="btn3" />
+
+    <Button Text="Back to page Page1"
+            Grid.Row="2"
+            Grid.Column="2"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" BackgroundColor="Yellow"
+            Command="{Binding NavigateToPage2Command}" />
+
+    <Label Text="This is Page 2 - Added by PushAsync()" BackgroundColor="Yellow" Grid.Row="1" Grid.Column="1"></Label>
+    <Label Text="{Binding BtnClicked}" BackgroundColor="Yellow" Grid.Row="1" Grid.Column="2"></Label>
+    </Grid>
+</ContentPage>
